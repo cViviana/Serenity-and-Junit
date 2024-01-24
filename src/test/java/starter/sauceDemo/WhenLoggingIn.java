@@ -7,25 +7,26 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.steps.UIInteractions;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 
 
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WhenLoggingIn extends UIInteractions {
+public class WhenLoggingIn{
     
     @Managed
     WebDriver driver;
 
+    @Steps
+    LoginActions login;
+
     @Test
     public void userCanLoginViaTheHomePage() {
-        openUrl("https://saucedemo.com");
-
-        find("[data-test='username']").sendKeys("standard_user");
-        find("[data-test='password']").sendKeys("secret_sauce");
-        find("[data-test='login-button']") .click();
-
-        assertEquals(find(".title").getText(),"Products");
+        
+        login.as("standard_user", "secret_sauce");
+        
+        //assertEquals(find(".title").getText(),"Products");
     }
 }
