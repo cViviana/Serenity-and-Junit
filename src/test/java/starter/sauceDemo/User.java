@@ -6,7 +6,7 @@ public enum User {
     PROBLEM_USER("problem_user","secret_sauce","A problem user"),
     PERFORMANCE_GLITCH_USER("performance_glitch_user","secret_sauce","A performance glitch user"),
     ERROR_USER("error_user","secret_sauce","An error user"),
-    VISUAL_USER("visual_user","secret_sauce","A visual user"),
+    VISUAL_USER("visual_user","secret_sauce","A visual user");
 
     private final String username;
     private final String passsword;

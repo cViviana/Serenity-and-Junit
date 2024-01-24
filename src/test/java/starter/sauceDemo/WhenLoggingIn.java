@@ -21,12 +21,13 @@ public class WhenLoggingIn{
 
     @Steps
     LoginActions login;
+    InventoryPage inventoryPage;
 
     @Test
     public void userCanLoginViaTheHomePage() {
         
         login.as(User.STANDARD_USER);
 
-        //assertEquals(find(".title").getText(),"Products");
+        assertEquals(inventoryPage.getHeading(),"Products");
     }
 }
