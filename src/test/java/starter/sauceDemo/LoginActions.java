@@ -4,11 +4,11 @@ import net.serenitybdd.core.steps.UIInteractions;
 
 public class LoginActions extends UIInteractions{
     
-    public void as(String username, String password) {
+    public void as(User user) {
         openUrl("https://saucedemo.com");
 
-        find("[data-test='username']").sendKeys(username);
-        find("[data-test='password']").sendKeys(password);
+        find("[data-test='username']").sendKeys(user.getUsername());
+        find("[data-test='password']").sendKeys(user.getPasssword());
         find("[data-test='login-button']").click();
     }
 }

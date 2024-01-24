@@ -25,8 +25,8 @@ public class WhenLoggingIn{
     @Test
     public void userCanLoginViaTheHomePage() {
         
-        login.as("standard_user", "secret_sauce");
-        
+        login.as(User.STANDARD_USER);
+
         //assertEquals(find(".title").getText(),"Products");
     }
 }
